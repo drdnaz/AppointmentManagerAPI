@@ -3,11 +3,17 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from utils.dependencies import get_db
+<<<<<<< HEAD
 from services import user_service
 
 router = APIRouter( prefix="/users",
     tags=["👤  User Operations"]
 )
+=======
+from services import user_service  # 🚀 İş mantığı buradan gelir
+
+router = APIRouter()
+>>>>>>> db66bb345e292369d0ea6432074d36fe2e74f74a
 
 @router.post("/users")
 def create_user(name: str, db: Session = Depends(get_db)):

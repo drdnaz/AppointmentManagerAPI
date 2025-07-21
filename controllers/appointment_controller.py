@@ -4,10 +4,14 @@ from utils.dependencies import get_db
 from services import appointment_service
 from datetime import datetime
 
+<<<<<<< HEAD
 router = APIRouter(
     prefix="/appointments",
     tags=["📅 Appointment Operations"]
 )
+=======
+router = APIRouter()
+>>>>>>> db66bb345e292369d0ea6432074d36fe2e74f74a
 
 # ➕ Yeni randevu oluştur
 @router.post("/appointments")
@@ -23,6 +27,7 @@ def list_appointments(db: Session = Depends(get_db)):
 @router.delete("/appointments/{appointment_id}")
 def delete_appointment(appointment_id: int, db: Session = Depends(get_db)):
     return appointment_service.delete_appointment(db, appointment_id)
+<<<<<<< HEAD
 # Randevu güncelle (PUT)
 @router.put("/appointments/{appointment_id}")
 def update_appointment(
@@ -47,3 +52,5 @@ def get_user_appointments(user_id: int, db: Session = Depends(get_db)):
 @router.get("/providers/{provider_id}/appointments")
 def get_provider_appointments(provider_id: int, db: Session = Depends(get_db)):
     return appointment_service.get_appointments_by_provider(db, provider_id)
+=======
+>>>>>>> db66bb345e292369d0ea6432074d36fe2e74f74a
